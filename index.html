@@ -2,16 +2,33 @@
   <head>
     <meta charset="utf-8" />
     <title>Getting Started</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!-- This is the line for Anton font -->
     <script src="https://unpkg.com/lodash@4.17.20"></script>
     <link rel="stylesheet" href="../src/style.css">
   </head>
   <body>
-    Weather Application
 
-    <form id="weatherForm">
+    <header>    
+        <form id="weatherForm">
         <input type="text" id="locationInput" placeholder="Enter a location...">
-        <button type="submit">Get Weather</button>
-    </form>
+        <!-- <button type="submit">Get Weather</button> -->
+        </form>
+    </header>
+
+    <div class="general-info">
+      <p class="condition">Sunny</p>
+      <p class="location"><h1 class="city">Christchurch</h1> <h2 class="country">New Zealand</h2></p>
+      
+      <div class="temp-container">
+      <p class="temp">69<span class="degree">°C</span></p>
+      <div class="extra-info">
+          <p class="feels-like">Feels like: 69<span class="degree">°C</span></p>
+          <p class="wind">Wind Speed: 10KPH</p>
+          <p class="humidity">Humidity: 69%</p>
+      </div>
+    </div>
+    </div>
+
     
   <div id="weatherOutput"></div>
     <script src="bundle.js"></script>
