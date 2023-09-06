@@ -1,3 +1,75 @@
 body {
-    /* background-color: red; */
+    font-family: 'Anton', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: relative;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    border-bottom: 1px solid black;
+}
+
+#weatherForm {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+#locationInput {
+    height: 40px;
+    width: 240px;
+    background-color: rgba(172, 171, 171, 0.365);
+    border: none;
+    border-radius: 6px;
+    margin-right: 50px;
+    padding: 0px 20px;
+}
+
+.general-info {
+    position: absolute;
+    top: 30%;
+    left: 10%; 
+}
+
+.extra-info {
+    height: 76%;
+    padding-left: 30px;
+    border-left: 1px solid black;
+}
+
+.temp-container {
+    display: flex;
+    align-items: center;
+}
+
+p, h1, h2 {
+    margin: 0;
+}
+.condition{
+    font-size: 2em;
+}
+
+.city {
+    font-size: 3.5em;
+}
+
+.country {
+    font-size: 2em;
+}
+
+.temp {
+    font-size: 6em;
+    padding-right: 50px;
+    position: relative;
+}
+
+.temp .degree {
+    font-size: 30%;
+    position: absolute;
+    top: 5%;
+    
 }

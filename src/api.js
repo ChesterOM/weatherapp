@@ -1,13 +1,17 @@
 async function getWeatherData(location) {
     const apiKey = 'e768ec92b4d440e1a4c25011232908';
-    const endPoint = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
+    const endPoint = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
 
     try {
         const response = await fetch(endPoint);
 
-        if(!response.ok) {
-            throw new Error('Network response not ok')
-        } 
+        if (!response.ok) {
+            if (response.status === 404) {
+                throw new Error('Location not found');
+            } else {
+                throw new Error('Network response not ok');
+            }
+        }
 
         const rawData = await response.json();
         return filterData(rawData);
@@ -24,8 +28,7 @@ function filterData(rawData) {
         location: {
             country: rawData.location.country,
             localtime: rawData.location.localtime,
-            name: rawData.location.name,
-            region: rawData.location.region
+            name: rawData.location.name
         },
         current: {
             condition: rawData.current.condition.text,

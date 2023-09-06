@@ -1,11 +1,6 @@
 import './style.css'
 import { getWeatherData } from './api'
+import { weatherFormListener } from './app'
 
-(async () => {
-  try {
-      const data = await getWeatherData('christchurch');
-      console.log(data);
-  } catch (error) {
-      console.error('Error fetching data:', error);
-  }
-})();
+
+weatherFormListener()
